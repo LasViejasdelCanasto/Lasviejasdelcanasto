@@ -1,16 +1,12 @@
-Hola a todos!
+# Las Viejas del Canasto — sitio web
 
-<!--
-**LasViejasdelCanasto/Lasviejasdelcanasto** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Sitio estático preparado para GitHub Pages.
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Cómo publicarlo
+1. Abre el repositorio `Lasviejasdelcanasto`.
+2. Add file → Upload files.
+3. Sube `index.html`, `styles.css`, `script.js` y la carpeta `images`.
+4. Commit changes.
+5. Settings → Pages: main / (root).
+6. Custom domain: `lasviejasdelcanasto.cl`.
+7. Cuando el DNS esté validado, activa Enforce HTTPS.
