@@ -80,11 +80,8 @@
   const vacio = document.getElementById('cart-empty');
   const pie = document.getElementById('cart-checkout');
   const contadores = document.querySelectorAll('[data-cart-count]');
-  const selEntrega = document.getElementById('order-delivery');
   const botonesEnvio = document.getElementById('send-buttons');
   const errorEl = document.getElementById('order-error');
-
-  if (selEntrega) selEntrega.innerHTML = '<option value="">Elige una opción</option>' + TIENDA.entregas.map(e => `<option>${esc(e)}</option>`).join('');
   if (botonesEnvio) botonesEnvio.innerHTML = TIENDA.whatsapp.map(w => `<button type="button" class="send-button" data-numero="${w.numero}">Enviar pedido a ${esc(w.etiqueta)}</button>`).join('');
 
   function agregar(id, variante) {
@@ -142,13 +139,11 @@
     const b = e.target.closest('.send-button'); if (!b) return;
     const nombre = document.getElementById('order-name').value.trim();
     const direccion = document.getElementById('order-address').value.trim();
-    const entrega = selEntrega.value;
     const notas = document.getElementById('order-notes').value.trim();
 
     const faltan = [];
     if (!nombre) faltan.push('tu nombre');
     if (!direccion) faltan.push('la dirección de entrega');
-    if (!entrega) faltan.push('la fecha de entrega');
     if (faltan.length) {
       errorEl.textContent = 'Falta completar ' + faltan.join(', ').replace(/, ([^,]*)$/, ' y $1') + '.';
       errorEl.hidden = false;
@@ -160,7 +155,7 @@
       const p = porId[l.id];
       return `• ${l.cant} x ${p.nombre}${l.variante ? ' (' + l.variante + ')' : ''}: ${clp(precioDe(p, l.variante) * l.cant)}`;
     }).join('\n');
-    const msg = `Hola Las Viejas del Canasto, quiero hacer este pedido:\n\n${detalle}\n\nTotal: ${clp(totalPesos())}\n\nNombre: ${nombre}\nDirección: ${direccion}\nEntrega: ${entrega}` + (notas ? `\nComentarios: ${notas}` : '');
+    const msg = `Hola Las Viejas del Canasto, quiero hacer este pedido:\n\n${detalle}\n\nTotal: ${clp(totalPesos())}\n\nNombre: ${nombre}\nDirección: ${direccion}` + (notas ? `\nComentarios: ${notas}` : '');
     window.open(`https://wa.me/${b.dataset.numero}?text=${encodeURIComponent(msg)}`, '_blank');
   });
 
