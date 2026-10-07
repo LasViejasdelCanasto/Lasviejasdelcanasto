@@ -60,5 +60,11 @@ const TIENDA = {
     { id: 'set-cosmos', marca: 'Las Viejas del Canasto', nombre: 'Set Cosmos', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-cosmos.jpg', descripcion: 'Bowl para salsas, ensaladera y plato XL. Consulta por otros modelos.' },
     { id: 'set-bruma', marca: 'Las Viejas del Canasto', nombre: 'Set Bruma', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-bruma.jpg', descripcion: 'Bowl para salsas, ensaladera y plato XL. Consulta por otros modelos.' },
     { id: 'set-origen', marca: 'Las Viejas del Canasto', nombre: 'Set Origen', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-origen.jpg', descripcion: 'Bowl para salsas y ensaladera XL. Consulta por otros modelos.' }
-  ]
+ { id: 'set-piedra', marca: 'Las Viejas del Canasto', nombre: 'Set Piedra', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-piedra.jpg' },
+{ id: 'set-oliva', marca: 'Las Viejas del Canasto', nombre: 'Set Oliva', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-oliva.jpg' },
+{ id: 'set-provenza', marca: 'Las Viejas del Canasto', nombre: 'Set Provenza', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-provenza.jpg' },
+{ id: 'set-toscana', marca: 'Las Viejas del Canasto', nombre: 'Set Toscana', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-toscana.jpg' },
+{ id: 'set-lino', marca: 'Las Viejas del Canasto', nombre: 'Set Lino', categoria: 'hogar', precio: 20000, imagen: 'images/productos/set-lino.jpg' },
+{ id: 'set-salvia', marca: 'Las Viejas del Canasto', nombre: 'Set Salvia', categoria: 'hogar', precio: 20000, imagen: 'images/productos/set-salvia.jpg' },
+{ id: 'set-mediterraneo', marca: 'Las Viejas del Canasto', nombre: 'Set Mediterráneo', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-mediterraneo.jpg' } ]
 };
