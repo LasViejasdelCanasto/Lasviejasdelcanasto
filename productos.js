@@ -57,15 +57,15 @@ const TIENDA = {
     { id: 'cafe-brasil', marca: 'Café Señor K', nombre: 'Café de Brasil Carmo de Minas 250 gr', categoria: 'te-cafe', precio: 13000, imagen: 'images/productos/cafe-brasil.jpg', descripcion: 'Bourbon amarillo de tueste medio, con notas a chocolate y castañas de cajú.' },
     { id: 'campana', marca: 'Las Viejas del Canasto', nombre: 'Campana', categoria: 'hogar', precio: 14000, imagen: 'images/productos/campana.jpg', descripcion: 'Campana de fierro para la entrada de la casa.' },
     { id: 'pasta-ajo-chilote', marca: 'Gourmandier', nombre: 'Pack pasta de ajo chilote 156 ml', categoria: 'despensa', precio: 16000, imagen: 'images/productos/pasta-ajo-chilote.jpg', descripcion: 'Pastas de ajo chilote con albahaca, ciboulette y orégano, para salsas, sopas y adobos.' },
-    { id: 'set-cosmos', marca: 'Las Viejas del Canasto', nombre: 'Set Cosmos', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-cosmos.jpg', descripcion: 'Bowl para salsas, ensaladera y plato XL. Consulta por otros modelos.' },
-    { id: 'set-bruma', marca: 'Las Viejas del Canasto', nombre: 'Set Bruma', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-bruma.jpg', descripcion: 'Bowl para salsas, ensaladera y plato XL. Consulta por otros modelos.' },
-    { id: 'set-origen', marca: 'Las Viejas del Canasto', nombre: 'Set Origen', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-origen.jpg', descripcion: 'Bowl para salsas y ensaladera XL. Consulta por otros modelos.' }
- { id: 'set-piedra', marca: 'Las Viejas del Canasto', nombre: 'Set Piedra', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-piedra.jpg' },
-{ id: 'set-oliva', marca: 'Las Viejas del Canasto', nombre: 'Set Oliva', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-oliva.jpg' },
-{ id: 'set-provenza', marca: 'Las Viejas del Canasto', nombre: 'Set Provenza', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-provenza.jpg' },
-{ id: 'set-toscana', marca: 'Las Viejas del Canasto', nombre: 'Set Toscana', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-toscana.jpg' },
-{ id: 'set-lino', marca: 'Las Viejas del Canasto', nombre: 'Set Lino', categoria: 'hogar', precio: 20000, imagen: 'images/productos/set-lino.jpg' },
-{ id: 'set-salvia', marca: 'Las Viejas del Canasto', nombre: 'Set Salvia', categoria: 'hogar', precio: 20000, imagen: 'images/productos/set-salvia.jpg' },
-{ id: 'set-mediterraneo', marca: 'Las Viejas del Canasto', nombre: 'Set Mediterráneo', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-mediterraneo.jpg' } ]
+    { id: 'set-cosmos', marca: 'Las Viejas del Canasto', nombre: 'Set Cosmos', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-cosmos.jpg', descripcion: 'Bowl para salsas, ensaladera y plato XL. ' },
+    { id: 'set-bruma', marca: 'Las Viejas del Canasto', nombre: 'Set Bruma', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-bruma.jpg', descripcion: 'Bowl para salsas, ensaladera y plato XL. ' },
+    { id: 'set-origen', marca: 'Las Viejas del Canasto', nombre: 'Set Origen', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-origen.jpg', descripcion: 'Bowl para salsas y ensaladera XL. ' },
+ { id: 'set-piedra', marca: 'Las Viejas del Canasto', nombre: 'Set Piedra', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-piedra.jpg', descripcion: 'Bowl para salsas, ensaladera y plato. ' },
+{ id: 'set-oliva', marca: 'Las Viejas del Canasto', nombre: 'Set Oliva', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-oliva.jpg', descripcion: 'Bowl para salsas, ensaladera y plato. ' },
+{ id: 'set-provenza', marca: 'Las Viejas del Canasto', nombre: 'Set Provenza', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-provenza.jpg', descripcion: 'Bowl para salsas, ensaladera y plato. ' },
+{ id: 'set-toscana', marca: 'Las Viejas del Canasto', nombre: 'Set Toscana', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-toscana.jpg', descripcion: 'Bowl para salsas, ensaladera y plato. ' },
+{ id: 'set-lino', marca: 'Las Viejas del Canasto', nombre: 'Set Lino', categoria: 'hogar', precio: 20000, imagen: 'images/productos/set-lino.jpg', descripcion: 'Bowl para salsas, bowl pequeño, ensaladera y plato. ' },
+{ id: 'set-salvia', marca: 'Las Viejas del Canasto', nombre: 'Set Salvia', categoria: 'hogar', precio: 20000, imagen: 'images/productos/set-salvia.jpg', descripcion: 'Bowl para salsas, plato y ensaladera XL. ' },
+{ id: 'set-mediterraneo', marca: 'Las Viejas del Canasto', nombre: 'Set Mediterráneo', categoria: 'hogar', precio: 18000, imagen: 'images/productos/set-mediterraneo.jpg', 'Bowl para salsas, ensaladera y plato. ' } ]
 ]
 };
