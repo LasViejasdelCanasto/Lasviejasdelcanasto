@@ -80,3 +80,27 @@
 @media(max-width:620px){.cart-button{padding:0 14px}.product-body{padding:14px}.product-name{font-size:20px}.product-desc{display:none}.product-buy{flex-direction:column;align-items:stretch}.add-button{width:100%}.cart-inner{padding:20px 18px 28px}.shop-filters{flex-wrap:nowrap;overflow-x:auto;margin-inline:-12px;padding:0 12px 4px}.filter{flex:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
 @media(max-width:430px){.brand-name{display:none}}
+/* Ajustes sección Nuestra Historia */
+#nosotras {
+  padding-top: 120px;
+}
+
+#nosotras .story-copy h2 {
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+
+#nosotras .story-copy p {
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+#nosotras .story-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 24px;
+  display: block;
+}
