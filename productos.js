@@ -14,7 +14,6 @@ const TIENDA = {
   // Números que reciben los pedidos (formato 569XXXXXXXX)
   whatsapp: [
     { numero: '56992266719', etiqueta: '+56 9 9226 6719' },
-    { numero: '56978097285', etiqueta: '+56 9 7809 7285' }
   ],
 
   // Aviso destacado sobre la tienda. Para quitarlo: aviso: null
