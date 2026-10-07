@@ -13,8 +13,9 @@
 const TIENDA = {
   // Números que reciben los pedidos (formato 569XXXXXXXX)
   whatsapp: [
-    { numero: '56992266719', etiqueta: '+56 9 9226 6719' },
-  ],
+  { numero: '56992266719', etiqueta: 'Yoya: +56 9 9226 6719' },
+  { numero: '56988688863', etiqueta: 'Vale: +56 9 8868 8863' }
+],
 
   // Aviso destacado sobre la tienda. Para quitarlo: aviso: null
   aviso: {
