@@ -37,6 +37,7 @@ const TIENDA = {
   ],
 
   productos: [
+    { id: 'cbo73019', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido negro', categoria: 'hogar', precio: 11000, imagen: 'images/productos/cbo73019.jpg', descripcion: 'Bolso tejido negro con asas negras. Medidas: 41 × 36 cm.' },
     { id: 'cbo73014', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido rojo', categoria: 'hogar', precio: 18000, imagen: 'images/productos/cbo73014.jpg', descripcion: 'Bolso tejido rojo con asas negras. Medidas: 48 × 35 cm.' },
     { id: 'cbo73016', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido natural', categoria: 'hogar', precio: 18000, imagen: 'images/productos/cbo73016.jpg', descripcion: 'Bolso tejido color natural con asas negras.' },
     { id: 'cbo73018', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido beige', categoria: 'hogar', precio: 11000, imagen: 'images/productos/cbo73018.jpg', descripcion: 'Bolso tejido beige. Medidas: 41 × 36 cm.' },
