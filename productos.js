@@ -37,6 +37,14 @@ const TIENDA = {
   ],
 
   productos: [
+    { id: 'cce40020', marca: 'Las Viejas del Canasto', nombre: 'Bandeja rectangular tejida', categoria: 'hogar', variantes: [ { nombre: 'Pequeña (38 × 28 × 6 cm)', precio: 18000 }, { nombre: 'Grande (43 × 33 × 7 cm)', precio: 22000 } ], imagen: 'images/productos/cce40020.jpg', descripcion: 'Bandeja tejida con asas. Precio por unidad.' },
+    { id: 'cce40010', marca: 'Las Viejas del Canasto', nombre: 'Organizador cuadrado tejido', categoria: 'hogar', precio: 12000, imagen: 'images/productos/cce40010.jpg', descripcion: 'Organizador tejido con asa y compartimentos. Medidas: 20 × 20 × 12 cm.' },
+    { id: 'cce20100', marca: 'Las Viejas del Canasto', nombre: 'Bandeja pequeña tejida', categoria: 'hogar', precio: 12000, imagen: 'images/productos/cce20100.jpg', descripcion: 'Bandeja pequeña cuadrada de fibra tejida.' },
+    { id: 'cce20084', marca: 'Las Viejas del Canasto', nombre: 'Bandeja cuadrada tejida', categoria: 'hogar', precio: 15000, imagen: 'images/productos/cce20084.jpg', descripcion: 'Bandeja cuadrada de fibra tejida. Medidas: 28 × 28 × 8 cm.' },
+    { id: 'cce20085', marca: 'Las Viejas del Canasto', nombre: 'Canasto rectangular tejido', categoria: 'hogar', precio: 20000, imagen: 'images/productos/cce20085.jpg', descripcion: 'Canasto rectangular tejido con asas. Medidas: 40 × 25 × 18 cm.' },
+    { id: 'cce30010', marca: 'Las Viejas del Canasto', nombre: 'Canasto alto gris', categoria: 'hogar', precio: 35000, imagen: 'images/productos/cce30010.jpg', descripcion: 'Canasto alto rectangular gris. Medidas: 45 × 35 × 55 cm.' },
+    { id: 'cce30009', marca: 'Las Viejas del Canasto', nombre: 'Canasto alto natural', categoria: 'hogar', precio: 35000, imagen: 'images/productos/cce30009.jpg', descripcion: 'Canasto alto rectangular natural. Medidas: 45 × 35 × 55 cm.' },
+    { id: 'cce11210', marca: 'Las Viejas del Canasto', nombre: 'Organizador rectangular tejido', categoria: 'hogar', precio: 14000, imagen: 'images/productos/cce11210.jpg', descripcion: 'Organizador tejido con asa y compartimentos. Medidas: 24 × 17 × 13 cm.' },
     { id: 'cbo73019', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido negro', categoria: 'hogar', precio: 11000, imagen: 'images/productos/cbo73019.jpg', descripcion: 'Bolso tejido negro con asas negras. Medidas: 41 × 36 cm.' },
     { id: 'cbo73014', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido rojo', categoria: 'hogar', precio: 18000, imagen: 'images/productos/cbo73014.jpg', descripcion: 'Bolso tejido rojo con asas negras. Medidas: 48 × 35 cm.' },
     { id: 'cbo73016', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido natural', categoria: 'hogar', precio: 18000, imagen: 'images/productos/cbo73016.jpg', descripcion: 'Bolso tejido color natural con asas negras.' },
