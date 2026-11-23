@@ -34,7 +34,8 @@
     : clp(p.precio);
 
   function pintarCatalogo(cat) {
-    const lista = TIENDA.productos.filter(p => !p.agotado && (cat === 'todo' || p.categoria === cat));
+    const lista = TIENDA.productos.filter(p => !p.agotado && (cat === 'todo' || p.categoria === cat))
+      .sort((a, b) => (a.variantes ? Math.min(...a.variantes.map(v => v.precio)) : a.precio) - (b.variantes ? Math.min(...b.variantes.map(v => v.precio)) : b.precio));
     grid.innerHTML = lista.map(p => `
       <article class="product" data-id="${p.id}">
         <div class="product-photo"><img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" width="400" height="500"></div>
