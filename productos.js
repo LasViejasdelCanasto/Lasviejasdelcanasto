@@ -37,6 +37,15 @@ const TIENDA = {
   ],
 
   productos: [
+    { id: 'cbo73014', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido rojo', categoria: 'hogar', precio: 18000, imagen: 'images/productos/cbo73014.jpg', descripcion: 'Bolso tejido rojo con asas negras. Medidas: 48 × 35 cm.' },
+    { id: 'cbo73016', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido natural', categoria: 'hogar', precio: 18000, imagen: 'images/productos/cbo73016.jpg', descripcion: 'Bolso tejido color natural con asas negras.' },
+    { id: 'cbo73018', marca: 'Las Viejas del Canasto', nombre: 'Bolso tejido beige', categoria: 'hogar', precio: 11000, imagen: 'images/productos/cbo73018.jpg', descripcion: 'Bolso tejido beige. Medidas: 41 × 36 cm.' },
+    { id: 'cce20018', marca: 'Las Viejas del Canasto', nombre: 'Cesto cuadrado tejido', categoria: 'hogar', precio: 22000, imagen: 'images/productos/cce20018.jpg', descripcion: 'Cesto cuadrado tejido con asas. Medidas: 30 × 30 × 30 cm.' },
+    { id: 'cce11275', marca: 'Las Viejas del Canasto', nombre: 'Cajón tejido rectangular', categoria: 'hogar', precio: 22000, imagen: 'images/productos/cce11275.jpg', descripcion: 'Cajón tejido rectangular con asas. Medidas: 48 × 36 × 26 cm.' },
+    { id: 'cba73159', marca: 'Las Viejas del Canasto', nombre: 'Bandeja rectangular tejida', categoria: 'hogar', precio: 10000, imagen: 'images/productos/cba73159.jpg', descripcion: 'Bandeja tejida para servir o decorar. Medidas: 35 × 25 × 8 cm.' },
+    { id: 'cce20117', marca: 'Las Viejas del Canasto', nombre: 'Cesta redonda tejida', categoria: 'hogar', variantes: [ { nombre: 'Pequeña (35 × 9 cm)', precio: 12000 }, { nombre: 'Grande (40 × 11 cm)', precio: 15000 } ], imagen: 'images/productos/cce20117.jpg', descripcion: 'Cesta redonda tejida con asas, disponible en dos tamaños. El precio corresponde a una cesta.' },
+    { id: 'cce30020', marca: 'Las Viejas del Canasto', nombre: 'Canasto blanco y fibra', categoria: 'hogar', precio: 20000, imagen: 'images/productos/cce30020.jpg', descripcion: 'Canasto blanco y fibra natural. Medidas: 35 × 39 cm.' },
+    { id: 'cce40028', marca: 'Las Viejas del Canasto', nombre: 'Canasto de picnic', categoria: 'hogar', precio: 28000, imagen: 'images/productos/cce40028.jpg', descripcion: 'Canasto ovalado tejido con asas. Medidas: 45 × 34 × 21 cm.' },
     { id: 'saleros-mamuschka', marca: 'Las Viejas del Canasto', nombre: 'Set Saleros Mamuschka', categoria: 'hogar', precio: 6000, imagen: 'images/productos/saleros-mamuschka.jpg', descripcion: 'Salero y pimentero de cerámica pintados a mano.' },
     { id: 'mini-caja-gourmet', marca: 'Gourmandier', nombre: 'Mini caja regalo gourmet', categoria: 'despensa', precio: 6000, imagen: 'images/productos/mini-caja-gourmet.jpg', descripcion: 'Tres frascos de 28 ml con sabores surtidos: mermelada, manjar, confitura, pasta de ajo o salsa picante.' },
     { id: 'salsa-merken', marca: 'Gourmandier', nombre: 'Salsa de merkén 260 ml', categoria: 'despensa', precio: 6000, imagen: 'images/productos/salsa-merken.jpg', descripcion: 'Merkén ahumado con ajo chilote. Picor alto, ideal para adobar carnes o untar.' },
