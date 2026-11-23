@@ -105,3 +105,10 @@
   border-radius: 24px;
   display: block;
 }
+
+/* Encuadre de las fotografías de la charcutería */
+.product[data-id="tabla-charcutera-200g"] .product-photo,.product[data-id="tabla-charcutera-150g"] .product-photo,.product[data-id="snack-charqui-30g"] .product-photo{position:relative;overflow:hidden;aspect-ratio:1.1/1}
+.product[data-id="tabla-charcutera-200g"] .product-photo img,.product[data-id="tabla-charcutera-150g"] .product-photo img,.product[data-id="snack-charqui-30g"] .product-photo img{position:absolute;width:330%;max-width:none;height:auto;top:-95%}
+.product[data-id="tabla-charcutera-200g"] .product-photo img{left:-15%}
+.product[data-id="tabla-charcutera-150g"] .product-photo img{left:-127%}
+.product[data-id="snack-charqui-30g"] .product-photo img{left:-235%}
