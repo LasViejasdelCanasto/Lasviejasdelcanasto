@@ -125,3 +125,6 @@
 .product[data-id="saborista-pimenton"] .product-photo img{left:-68%}
 .product[data-id="saborista-salsa-aji"] .product-photo img{left:-144%}
 .product[data-id="saborista-cebolla"] .product-photo img{left:-206%}
+
+/* Mostrar completos los accesorios de parrilla. */
+.product[data-id^="parrilla-"] .product-photo img{object-fit:contain}

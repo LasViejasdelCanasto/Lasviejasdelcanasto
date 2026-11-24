@@ -33,10 +33,15 @@ const TIENDA = {
   categorias: [
     { id: 'despensa', nombre: 'Despensa gourmet' },
     { id: 'te-cafe', nombre: 'Té y café' },
-    { id: 'hogar', nombre: 'Hogar y mesa' }
+    { id: 'hogar', nombre: 'Hogar y mesa' },
+    { id: 'parrilla', nombre: 'Parrilla' }
   ],
 
   productos: [
+    { id: 'parrilla-fuelle', marca: 'Parrilla', nombre: 'Fuelle Soplador', categoria: 'parrilla', precio: 27000, imagen: 'images/productos/parrilla-fuelle.jpg', descripcion: 'Fuelle soplador para avivar el fuego de la parrilla.' },
+    { id: 'parrilla-pala-atizador', marca: 'Parrilla', nombre: 'Kit pala y atizador', categoria: 'parrilla', precio: 32000, imagen: 'images/productos/parrilla-pala-atizador.jpg', descripcion: 'Kit para parrilla que incluye una pala y un atizador.' },
+    { id: 'parrilla-kit', marca: 'Parrilla', nombre: 'Kit Parrillero', categoria: 'parrilla', precio: 33000, imagen: 'images/productos/parrilla-kit.jpg', descripcion: 'Kit de utensilios para parrilla presentado en estuche.' },
+    { id: 'parrilla-guantes', marca: 'Parrilla', nombre: 'Guantes Parrilleros', categoria: 'parrilla', precio: 36000, imagen: 'images/productos/parrilla-guantes.jpg', descripcion: 'Par de guantes parrilleros.' },
     { id: 'wenuy-trio-mermeladas', marca: 'Wenüy', nombre: 'Trío de mermeladas gourmet', categoria: 'despensa', precio: 17000, imagen: 'images/productos/wenuy-mermeladas.jpg', descripcion: 'Incluye mermelada de pimentón, mermelada de ají verde y mermelada de cebolla al vino tinto. Tres frascos de 160 g cada uno.' },
     { id: 'wenuy-trio-salsas', marca: 'Wenüy', nombre: 'Trío de salsas gourmet', categoria: 'despensa', precio: 17000, imagen: 'images/productos/wenuy-salsas.jpg', descripcion: 'Incluye conserva de tomates secos, salsa de ají verde y salsa de merkén. Tres frascos de 130 g cada uno.' },
     { id: 'saborista-aji-verde', marca: 'El Saborista', nombre: 'Confitura de ají verde', categoria: 'despensa', precio: 5000, imagen: 'images/productos/el-saborista.jpg', descripcion: 'Confitura de ají verde, frasco de 160 g.' },

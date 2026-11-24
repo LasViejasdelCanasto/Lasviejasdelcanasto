@@ -37,13 +37,16 @@
   const secciones = [
     { id: 'gourmet', nombre: 'Gourmet' },
     { id: 'hogar', nombre: 'Hogar y mesa' },
-    { id: 'regalos', nombre: 'Regalos' }
+    { id: 'regalos', nombre: 'Regalos' },
+    { id: 'parrilla', nombre: 'Parrilla' }
   ];
   function seccionDe(p) {
+    if (p.categoria === 'parrilla') return 'parrilla';
     if (p.id.startsWith('cbo') || p.id.startsWith('caja-') || p.id === 'mini-caja-gourmet') return 'regalos';
     return p.categoria === 'hogar' ? 'hogar' : 'gourmet';
   }
   function tipoDe(p) {
+    if (p.categoria === 'parrilla') return 'Accesorios de parrilla';
     if (p.id.startsWith('cbo')) return 'Bolsos tejidos';
     if (p.id.startsWith('caja-') || p.id === 'mini-caja-gourmet') return 'Cajas de regalo';
     if (p.id.startsWith('tabla-charcutera')) return 'Tablas charcuteras';
