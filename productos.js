@@ -38,6 +38,9 @@ const TIENDA = {
   ],
 
   productos: [
+    { id: 'trad-pincel', marca: 'Trad', nombre: 'Pincel chino y/o Borla decorativa + soporte', categoria: 'hogar', variantes: [ { nombre: '40 cm', precio: 45000 }, { nombre: '50 cm', precio: 53000 } ], imagen: 'images/productos/trad-pincel.jpg', descripcion: 'Pincel chino y/o borla decorativa con soporte, disponible en dos medidas.' },
+    { id: 'trad-servilleteros-yute', marca: 'Trad', nombre: 'Servilleteros de Yute', categoria: 'hogar', precio: 24000, imagen: 'images/productos/trad-servilleteros-yute.jpg', descripcion: 'Servilleteros de yute de la marca Trad.' },
+    { id: 'trad-servilleteros-redondos', marca: 'Trad', nombre: 'Servilleteros Redondos', categoria: 'hogar', precio: 22000, imagen: 'images/productos/trad-servilleteros-redondos.jpg', descripcion: 'Servilleteros redondos de la marca Trad.' },
     { id: 'parrilla-fuelle', marca: 'Parrilla', nombre: 'Fuelle Soplador', categoria: 'parrilla', precio: 27000, imagen: 'images/productos/parrilla-fuelle.jpg', descripcion: 'Fuelle soplador para avivar el fuego de la parrilla.' },
     { id: 'parrilla-pala-atizador', marca: 'Parrilla', nombre: 'Kit pala y atizador', categoria: 'parrilla', precio: 32000, imagen: 'images/productos/parrilla-pala-atizador.jpg', descripcion: 'Kit para parrilla que incluye una pala y un atizador.' },
     { id: 'parrilla-kit', marca: 'Parrilla', nombre: 'Kit Parrillero', categoria: 'parrilla', precio: 33000, imagen: 'images/productos/parrilla-kit.jpg', descripcion: 'Kit de utensilios para parrilla presentado en estuche.' },

@@ -46,6 +46,7 @@
     return p.categoria === 'hogar' ? 'hogar' : 'gourmet';
   }
   function tipoDe(p) {
+    if (p.id.startsWith('trad-')) return 'Decoración';
     if (p.categoria === 'parrilla') return 'Accesorios de parrilla';
     if (p.id.startsWith('cbo')) return 'Bolsos tejidos';
     if (p.id.startsWith('caja-') || p.id === 'mini-caja-gourmet') return 'Cajas de regalo';
