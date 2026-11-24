@@ -35,15 +35,14 @@
 
   // Agrupamos por sección y por tipo; cada grupo conserva precios ascendentes.
   const secciones = [
-    { id: 'gourmet', nombre: 'Gourmet' },
     { id: 'hogar', nombre: 'Hogar y mesa' },
     { id: 'regalos', nombre: 'Regalos' },
     { id: 'parrilla', nombre: 'Parrilla' },
-    { id: 'juguetes', nombre: 'Juguetes' },
-    { id: 'navidad', nombre: 'Navidad' }
+    { id: 'gourmet', nombre: 'Gourmet' },
+    { id: 'juguetes', nombre: 'Juguetes' }
   ];
   function seccionDe(p) {
-    if (p.categoria === 'navidad') return 'navidad';
+    if (p.categoria === 'navidad') return 'hogar';
     if (p.categoria === 'juguetes') return 'juguetes';
     if (p.categoria === 'parrilla') return 'parrilla';
     if (p.id.startsWith('cbo') || p.id.startsWith('caja-')) return 'regalos';
@@ -89,7 +88,7 @@
     grid.innerHTML = secciones.filter(s => cat === 'todo' || cat === s.id).map(seccion => {
       const productos = disponibles.filter(p => seccionDe(p) === seccion.id);
       if (!productos.length) return '';
-      const tipos = [...new Set(productos.map(tipoDe))].sort((a,b) => a.localeCompare(b, 'es'));
+      const tipos = [...new Set(productos.map(tipoDe))].sort((a,b) => a === 'Navidad' ? -1 : b === 'Navidad' ? 1 : a.localeCompare(b, 'es'));
       return `<h3 class="shop-section-title">${esc(seccion.nombre)}</h3>` +
         tipos.map(tipo => {
           const grupo = productos.filter(p => tipoDe(p) === tipo)
