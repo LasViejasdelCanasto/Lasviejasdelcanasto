@@ -132,3 +132,5 @@
 .product[data-id^="juguete-"] .product-photo img{object-fit:contain}
 
 .product[data-id^="navidad-"] .product-photo img{object-fit:contain}
+
+.product[data-id="navidad-pino"] .product-photo img{object-fit:cover;object-position:center bottom}
