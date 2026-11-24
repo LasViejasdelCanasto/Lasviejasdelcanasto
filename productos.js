@@ -34,10 +34,27 @@ const TIENDA = {
     { id: 'despensa', nombre: 'Despensa gourmet' },
     { id: 'te-cafe', nombre: 'Té y café' },
     { id: 'hogar', nombre: 'Hogar y mesa' },
-    { id: 'parrilla', nombre: 'Parrilla' }
+    { id: 'parrilla', nombre: 'Parrilla' },
+    { id: 'juguetes', nombre: 'Juguetes' }
   ],
 
   productos: [
+    { id: "juguete-baby-morocha", marca: "Baby Alive", nombre: "Baby Alive morocha", categoria: 'juguetes', precio: 19000, imagen: "images/productos/juguete-baby-morocha.jpg", descripcion: "Muñeca Baby Alive con accesorios." },
+    { id: "juguete-baby-rubia", marca: "Baby Alive", nombre: "Baby Alive rubia", categoria: 'juguetes', precio: 19000, imagen: "images/productos/juguete-baby-rubia.jpg", descripcion: "Muñeca Baby Alive con accesorios." },
+    { id: "juguete-baby-comida", marca: "Baby Alive", nombre: "Baby Alive comida", categoria: 'juguetes', precio: 6000, imagen: "images/productos/juguete-baby-comida.jpg", descripcion: "Comida para muñeca Baby Alive." },
+    { id: "juguete-princesa", marca: "Hasbro", nombre: "Pretty Princesa joyas", categoria: 'juguetes', precio: 20000, imagen: "images/productos/juguete-princesa.jpg", descripcion: "Juego de mesa de princesas con joyas." },
+    { id: "juguete-monopoly", marca: "Hasbro", nombre: "Monopoly Junior Peppa Pig", categoria: 'juguetes', precio: 22000, imagen: "images/productos/juguete-monopoly.jpg", descripcion: "Juego de mesa Monopoly Junior con temática Peppa Pig." },
+    { id: "juguete-izzy", marca: "My Little Pony", nombre: "My Little Pony Izzy", categoria: 'juguetes', precio: 18000, imagen: "images/productos/juguete-izzy.jpg", descripcion: "Set Izzy Moonbow con accesorios." },
+    { id: "juguete-sunny", marca: "My Little Pony", nombre: "My Little Pony Sunny", categoria: 'juguetes', precio: 18000, imagen: "images/productos/juguete-sunny.jpg", descripcion: "Set Sunny Starscout con accesorios para crear batidos." },
+    { id: "juguete-granja", marca: "Peppa Pig", nombre: "Peppa Pig La Granja", categoria: 'juguetes', precio: 35000, imagen: "images/productos/juguete-granja.jpg", descripcion: "Set de juego con figuras y accesorios de la granja." },
+    { id: "juguete-dino", marca: "Play-Doh", nombre: "Play-Doh Dino", categoria: 'juguetes', precio: 15000, imagen: "images/productos/juguete-dino.jpg", descripcion: "Set Dino Crew con masa Play-Doh y dinosaurio." },
+    { id: "juguete-peluqueria", marca: "Play-Doh", nombre: "Play-Doh peluquería", categoria: 'juguetes', precio: 25000, imagen: "images/productos/juguete-peluqueria.jpg", descripcion: "Set de peluquería con masas y accesorios." },
+    { id: "juguete-sand", marca: "Play-Doh", nombre: "Play-Doh Sand", categoria: 'juguetes', precio: 21000, imagen: "images/productos/juguete-sand.jpg", descripcion: "Balde de arena moldeable con accesorios." },
+    { id: "juguete-wheels", marca: "Play-Doh", nombre: "Play-Doh Wheels", categoria: 'juguetes', precio: 16000, imagen: "images/productos/juguete-wheels.jpg", descripcion: "Camión de bomberos Play-Doh Wheels con masa y accesorios." },
+    { id: "juguete-patito", marca: "Playskool", nombre: "Playskool Patito", categoria: 'juguetes', precio: 11000, imagen: "images/productos/juguete-patito.jpg", descripcion: "Juguete de patitos para gatear, desde 6 meses." },
+    { id: "juguete-crunch-rosa", marca: "Play-Doh", nombre: "Play-Doh Crystal Crunch Gemas Brillantes rosa y amarillo", categoria: 'juguetes', precio: 11000, imagen: "images/productos/juguete-crunch-rosa.jpg", descripcion: "Dos recipientes con masa Crystal Crunch, rosa y amarillo." },
+    { id: "juguete-crunch-azul", marca: "Play-Doh", nombre: "Play-Doh Crystal Crunch Gemas Brillantes azul y blanco", categoria: 'juguetes', precio: 11000, imagen: "images/productos/juguete-crunch-azul.jpg", descripcion: "Dos recipientes con masa Crystal Crunch, azul y blanco." },
+    { id: "juguete-cocomelon", marca: "Cocomelon", nombre: "Cocomelon Family Car", categoria: 'juguetes', precio: 15000, imagen: "images/productos/juguete-cocomelon.jpg", descripcion: "Auto familiar de juguete con figura Cocomelon." },
     { id: 'parrilla-cepillo-recargable', marca: 'Las Viejas del Canasto', nombre: 'Cepillo Limpiador Recargable', categoria: 'parrilla', precio: 18000, imagen: 'images/productos/cepillo-limpiador-recargable-v2.jpg', descripcion: 'Cepillo eléctrico recargable para limpiar la parrilla. Incluye cabezal de cerdas duras, cabezal de pulido y cable USB-C.' },
     { id: 'trad-pincel', marca: 'Trad', nombre: 'Pincel chino y/o Borla decorativa + soporte', categoria: 'hogar', variantes: [ { nombre: '40 cm', precio: 45000 }, { nombre: '50 cm', precio: 53000 } ], imagen: 'images/productos/trad-pincel.jpg', descripcion: 'Pincel chino y/o borla decorativa con soporte, disponible en dos medidas.' },
     { id: 'trad-servilleteros-yute', marca: 'Trad', nombre: 'Servilleteros de Yute', categoria: 'hogar', precio: 24000, imagen: 'images/productos/trad-servilleteros-yute.jpg', descripcion: 'Servilleteros de yute de la marca Trad.' },
