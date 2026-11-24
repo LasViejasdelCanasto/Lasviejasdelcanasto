@@ -42,14 +42,15 @@
   ];
   function seccionDe(p) {
     if (p.categoria === 'parrilla') return 'parrilla';
-    if (p.id.startsWith('cbo') || p.id.startsWith('caja-') || p.id === 'mini-caja-gourmet') return 'regalos';
+    if (p.id.startsWith('cbo') || p.id.startsWith('caja-')) return 'regalos';
     return p.categoria === 'hogar' ? 'hogar' : 'gourmet';
   }
   function tipoDe(p) {
+    if (p.id === 'cce20117') return 'Bandejas';
     if (p.id.startsWith('trad-')) return 'Decoración';
     if (p.categoria === 'parrilla') return 'Accesorios de parrilla';
     if (p.id.startsWith('cbo')) return 'Bolsos tejidos';
-    if (p.id.startsWith('caja-') || p.id === 'mini-caja-gourmet') return 'Cajas de regalo';
+    if (p.id.startsWith('caja-')) return 'Cajas de regalo';
     if (p.id.startsWith('tabla-charcutera')) return 'Tablas charcuteras';
     if (p.id.startsWith('snack-charqui')) return 'Snacks';
     if (p.categoria === 'te-cafe') return 'Té y café';
