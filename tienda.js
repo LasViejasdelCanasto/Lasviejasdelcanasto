@@ -183,29 +183,54 @@
   document.querySelectorAll('[data-close-cart]').forEach(b => b.addEventListener('click', () => panel.close()));
   panel?.addEventListener('click', e => { if (e.target === panel) panel.close(); });
 
-  // ---------- Enviar por WhatsApp ----------
-  botonesEnvio?.addEventListener('click', e => {
-    const b = e.target.closest('.send-button'); if (!b) return;
+  // ---------- Registrar y enviar por WhatsApp ----------
+  let pendingOrder = null;
+  botonesEnvio?.addEventListener('click', async e => {
+    const b = e.target.closest('.send-button'); if (!b || b.disabled) return;
     const nombre = document.getElementById('order-name').value.trim();
+    const telefono = document.getElementById('order-phone').value.trim();
     const direccion = document.getElementById('order-address').value.trim();
     const notas = document.getElementById('order-notes').value.trim();
-
     const faltan = [];
-    if (!nombre) faltan.push('tu nombre');
-    if (!direccion) faltan.push('la dirección de entrega');
+    if (!nombre || nombre.length > 100) faltan.push('un nombre válido');
+    if (!/^[+0-9 ()-]{8,25}$/.test(telefono) || telefono.replace(/\\D/g, '').length < 8) faltan.push('un teléfono válido');
+    if (!direccion || direccion.length > 250) faltan.push('una dirección válida');
+    if (notas.length > 500) faltan.push('un comentario de hasta 500 caracteres');
+    if (!canasto.length) faltan.push('productos en el canasto');
     if (faltan.length) {
       errorEl.textContent = 'Falta completar ' + faltan.join(', ').replace(/, ([^,]*)$/, ' y $1') + '.';
-      errorEl.hidden = false;
-      return;
+      errorEl.hidden = false; return;
     }
-    errorEl.hidden = true;
-
+    const whatsapp = TIENDA.whatsapp.find(w => w.numero === b.dataset.numero);
+    if (!whatsapp) { errorEl.textContent = 'No se pudo identificar el contacto. Intenta nuevamente.'; errorEl.hidden = false; return; }
+    const seller = /yoya/i.test(whatsapp.etiqueta) ? 'yoya' : /vale/i.test(whatsapp.etiqueta) ? 'vale' : null;
+    if (!seller) { errorEl.textContent = 'No se pudo identificar el contacto. Intenta nuevamente.'; errorEl.hidden = false; return; }
+    const items = canasto.map(l => ({id:l.id, name:porId[l.id].nombre, variant:l.variante || null, quantity:l.cant, unitPrice:precioDe(porId[l.id], l.variante)}));
+    const input = {name:nombre, phone:telefono, address:direccion, notes:notas, seller, items};
+    const signature = JSON.stringify(input);
+    if (!pendingOrder || pendingOrder.signature !== signature) pendingOrder = {signature, id:crypto.randomUUID()};
     const detalle = canasto.map(l => {
       const p = porId[l.id];
       return `• ${l.cant} x ${p.nombre}${l.variante ? ' (' + l.variante + ')' : ''}: ${clp(precioDe(p, l.variante) * l.cant)}`;
-    }).join('\n');
-    const msg = `Hola Las Viejas del Canasto, quiero hacer este pedido:\n\n${detalle}\n\nTotal: ${clp(totalPesos())}\n\nNombre: ${nombre}\nDirección: ${direccion}` + (notas ? `\nComentarios: ${notas}` : '');
-    window.open(`https://wa.me/${b.dataset.numero}?text=${encodeURIComponent(msg)}`, '_blank');
+    }).join('\\n');
+    const msg = `Hola Las Viejas del Canasto, quiero hacer este pedido:\\n\\n${detalle}\\n\\nTotal: ${clp(totalPesos())}\\n\\nNombre: ${nombre}\\nTeléfono: ${telefono}\\nDirección: ${direccion}` + (notas ? `\\nComentarios: ${notas}` : '');
+    const popup = window.open('', '_blank');
+    b.disabled = true; errorEl.hidden = true;
+    try {
+      const res = await fetch('https://lvc-esparragos.yoyatim.chatgpt.site/api/shop-orders', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({id:pendingOrder.id, ...input})
+      });
+      if (!res.ok) throw new Error('No se pudo registrar el pedido.');
+      const result = await res.json();
+      if (result.id !== pendingOrder.id || result.total !== totalPesos()) throw new Error('No se pudo confirmar el pedido.');
+      const url = `https://wa.me/${b.dataset.numero}?text=${encodeURIComponent(msg)}`;
+      if (popup) popup.location.replace(url); else window.location.assign(url);
+    } catch {
+      if (popup) popup.close();
+      errorEl.textContent = 'No pudimos registrar tu pedido. Revisa tu conexión e intenta nuevamente.';
+      errorEl.hidden = false;
+    } finally { b.disabled = false; }
   });
 
   pintarCanasto();
