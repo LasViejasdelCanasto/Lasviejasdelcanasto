@@ -37,6 +37,12 @@ const TIENDA = {
   ],
 
   productos: [
+    { id: 'wenuy-trio-mermeladas', marca: 'Wenüy', nombre: 'Trío de mermeladas gourmet', categoria: 'despensa', precio: 17000, imagen: 'images/productos/wenuy-mermeladas.jpg', descripcion: 'Incluye mermelada de pimentón, mermelada de ají verde y mermelada de cebolla al vino tinto. Tres frascos de 160 g cada uno.' },
+    { id: 'wenuy-trio-salsas', marca: 'Wenüy', nombre: 'Trío de salsas gourmet', categoria: 'despensa', precio: 17000, imagen: 'images/productos/wenuy-salsas.jpg', descripcion: 'Incluye conserva de tomates secos, salsa de ají verde y salsa de merkén. Tres frascos de 130 g cada uno.' },
+    { id: 'saborista-aji-verde', marca: 'El Saborista', nombre: 'Confitura de ají verde', categoria: 'despensa', precio: 5000, imagen: 'images/productos/el-saborista.jpg', descripcion: 'Confitura de ají verde, frasco de 160 g.' },
+    { id: 'saborista-pimenton', marca: 'El Saborista', nombre: 'Confitura de pimentón', categoria: 'despensa', precio: 5000, imagen: 'images/productos/el-saborista.jpg', descripcion: 'Confitura de pimentón, frasco de 160 g.' },
+    { id: 'saborista-salsa-aji', marca: 'El Saborista', nombre: 'Salsa de ají verde', categoria: 'despensa', precio: 5000, imagen: 'images/productos/el-saborista.jpg', descripcion: 'Salsa de ají verde, frasco de 130 g.' },
+    { id: 'saborista-cebolla', marca: 'El Saborista', nombre: 'Confitura de cebolla al vino tinto', categoria: 'despensa', precio: 5000, imagen: 'images/productos/el-saborista.jpg', descripcion: 'Confitura de cebolla al vino tinto, frasco de 160 g.' },
     { id: 'snack-charqui-30g', marca: 'Las Viejas del Canasto', nombre: 'Snack de charqui 30 g', categoria: 'despensa', precio: 3500, imagen: 'images/productos/charcuteria.jpg', descripcion: 'Snack de charqui vacuno de 30 g. La gráfica del producto indica 22 g de proteína.' },
     { id: 'tabla-charcutera-150g', marca: 'Las Viejas del Canasto', nombre: 'Tabla charcutera de 3 cortes 150 g', categoria: 'despensa', precio: 5500, imagen: 'images/productos/charcuteria.jpg', descripcion: 'Incluye 50 g de coppa, 50 g de salame italiano y 50 g de chorizo español. Imagen referencial.' },
     { id: 'tabla-charcutera-200g', marca: 'Las Viejas del Canasto', nombre: 'Tabla charcutera de 4 cortes 200 g', categoria: 'despensa', precio: 6900, imagen: 'images/productos/charcuteria.jpg', descripcion: 'Incluye 50 g de coppa, 50 g de salame italiano, 50 g de chorizo español y 50 g de queso gouda ahumado. Imagen referencial.' },
