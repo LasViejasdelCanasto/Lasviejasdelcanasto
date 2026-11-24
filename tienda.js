@@ -33,11 +33,34 @@
     ? 'Desde ' + clp(Math.min(...p.variantes.map(v => v.precio)))
     : clp(p.precio);
 
-  function pintarCatalogo(cat) {
-    const lista = TIENDA.productos.filter(p => !p.agotado && (cat === 'todo' || p.categoria === cat))
-      .sort((a, b) => (a.variantes ? Math.min(...a.variantes.map(v => v.precio)) : a.precio) - (b.variantes ? Math.min(...b.variantes.map(v => v.precio)) : b.precio));
-    grid.innerHTML = lista.map(p => `
-      <article class="product" data-id="${p.id}">
+  // Agrupamos por sección y por tipo; cada grupo conserva precios ascendentes.
+  const secciones = [
+    { id: 'gourmet', nombre: 'Gourmet' },
+    { id: 'hogar', nombre: 'Hogar y mesa' },
+    { id: 'regalos', nombre: 'Regalos' }
+  ];
+  function seccionDe(p) {
+    if (p.id.startsWith('cbo') || p.id.startsWith('caja-') || p.id === 'mini-caja-gourmet') return 'regalos';
+    return p.categoria === 'hogar' ? 'hogar' : 'gourmet';
+  }
+  function tipoDe(p) {
+    if (p.id.startsWith('cbo')) return 'Bolsos tejidos';
+    if (p.id.startsWith('caja-') || p.id === 'mini-caja-gourmet') return 'Cajas de regalo';
+    if (p.id.startsWith('tabla-charcutera')) return 'Tablas charcuteras';
+    if (p.id.startsWith('snack-charqui')) return 'Snacks';
+    if (p.categoria === 'te-cafe') return 'Té y café';
+    if (p.categoria === 'despensa') return 'Despensa';
+    if (p.id.startsWith('set-')) return 'Sets de mesa';
+    if (p.nombre.toLowerCase().includes('bandeja')) return 'Bandejas';
+    if (/canasto|cesto|cajón|cesta/i.test(p.nombre)) return 'Canastos y cestas';
+    if (/organizador|portacubiertos|servilletero/i.test(p.nombre)) return 'Organizadores';
+    if (/salero/i.test(p.nombre)) return 'Saleros';
+    return 'Decoración';
+  }
+  const precioInicial = p => p.variantes ? Math.min(...p.variantes.map(v => v.precio)) : p.precio;
+  function tarjeta(p) {
+    return `
+      <article class="product" data-id="${esc(p.id)}">
         <div class="product-photo"><img src="${esc(p.imagen)}" alt="${esc(p.nombre)}" loading="lazy" width="400" height="500"></div>
         <div class="product-body">
           <p class="product-brand">${esc(p.marca)}</p>
@@ -48,11 +71,25 @@
             <button class="add-button" type="button">Agregar</button>
           </div>
         </div>
-      </article>`).join('');
+      </article>`;
+  }
+  function pintarCatalogo(cat) {
+    const disponibles = TIENDA.productos.filter(p => !p.agotado);
+    grid.innerHTML = secciones.filter(s => cat === 'todo' || cat === s.id).map(seccion => {
+      const productos = disponibles.filter(p => seccionDe(p) === seccion.id);
+      if (!productos.length) return '';
+      const tipos = [...new Set(productos.map(tipoDe))].sort((a,b) => a.localeCompare(b, 'es'));
+      return `<h3 class="shop-section-title">${esc(seccion.nombre)}</h3>` +
+        tipos.map(tipo => {
+          const grupo = productos.filter(p => tipoDe(p) === tipo)
+            .sort((a,b) => precioInicial(a) - precioInicial(b) || a.nombre.localeCompare(b.nombre, 'es'));
+          return `<h4 class="shop-type-title">${esc(tipo)}</h4>` + grupo.map(tarjeta).join('');
+        }).join('');
+    }).join('');
   }
 
   if (filtros) {
-    const cats = [{ id: 'todo', nombre: 'Todo' }, ...TIENDA.categorias];
+    const cats = [{ id: 'todo', nombre: 'Todo' }, ...secciones];
     filtros.innerHTML = cats.map((c, i) => `<button type="button" class="filter${i === 0 ? ' is-active' : ''}" data-cat="${c.id}" aria-pressed="${i === 0}">${esc(c.nombre)}</button>`).join('');
     filtros.addEventListener('click', e => {
       const b = e.target.closest('.filter'); if (!b) return;
