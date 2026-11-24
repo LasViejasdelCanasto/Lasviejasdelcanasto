@@ -39,15 +39,18 @@
     { id: 'hogar', nombre: 'Hogar y mesa' },
     { id: 'regalos', nombre: 'Regalos' },
     { id: 'parrilla', nombre: 'Parrilla' },
-    { id: 'juguetes', nombre: 'Juguetes' }
+    { id: 'juguetes', nombre: 'Juguetes' },
+    { id: 'navidad', nombre: 'Navidad' }
   ];
   function seccionDe(p) {
+    if (p.categoria === 'navidad') return 'navidad';
     if (p.categoria === 'juguetes') return 'juguetes';
     if (p.categoria === 'parrilla') return 'parrilla';
     if (p.id.startsWith('cbo') || p.id.startsWith('caja-')) return 'regalos';
     return p.categoria === 'hogar' ? 'hogar' : 'gourmet';
   }
   function tipoDe(p) {
+    if (p.categoria === 'navidad') return 'Navidad';
     if (p.categoria === 'juguetes') return 'Juguetes';
     if (p.id === 'cce20117') return 'Bandejas';
     if (p.id.startsWith('trad-')) return 'Decoración';

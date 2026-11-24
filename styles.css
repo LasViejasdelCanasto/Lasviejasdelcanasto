@@ -130,3 +130,5 @@
 .product[data-id^="parrilla-"] .product-photo img{object-fit:contain}
 
 .product[data-id^="juguete-"] .product-photo img{object-fit:contain}
+
+.product[data-id^="navidad-"] .product-photo img{object-fit:contain}
