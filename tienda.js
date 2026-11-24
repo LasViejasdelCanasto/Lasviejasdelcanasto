@@ -131,9 +131,11 @@
   const contadores = document.querySelectorAll('[data-cart-count]');
   const botonesEnvio = document.getElementById('send-buttons');
   const errorEl = document.getElementById('order-error');
-  if (botonesEnvio) botonesEnvio.innerHTML = TIENDA.whatsapp.map(w => `<button type="button" class="send-button" data-numero="${w.numero}">Enviar pedido a ${esc(w.etiqueta)}</button>`).join('');
+  if (botonesEnvio) botonesEnvio.innerHTML = '<button type="button" class="send-button">Enviar pedido</button>';
 
   function agregar(id, variante) {
+    const confirmacion = document.getElementById('order-success');
+    if (confirmacion) confirmacion.hidden = true;
     const l = canasto.find(l => l.id === id && l.variante === variante);
     if (l) l.cant++; else canasto.push({ id, variante, cant: 1 });
     guardar(); pintarCanasto();
@@ -183,7 +185,7 @@
   document.querySelectorAll('[data-close-cart]').forEach(b => b.addEventListener('click', () => panel.close()));
   panel?.addEventListener('click', e => { if (e.target === panel) panel.close(); });
 
-  // ---------- Registrar y enviar por WhatsApp ----------
+  // ---------- Enviar pedido desde la tienda ----------
   let pendingOrder = null;
   botonesEnvio?.addEventListener('click', async e => {
     const b = e.target.closest('.send-button'); if (!b || b.disabled) return;
@@ -193,7 +195,7 @@
     const notas = document.getElementById('order-notes').value.trim();
     const faltan = [];
     if (!nombre || nombre.length > 100) faltan.push('un nombre válido');
-    if (!/^[+0-9 ()-]{8,25}$/.test(telefono) || telefono.replace(/\\D/g, '').length < 8) faltan.push('un teléfono válido');
+    if (!/^[+0-9 ()-]{8,25}$/.test(telefono) || telefono.replace(/\D/g, '').length < 8) faltan.push('un teléfono válido');
     if (!direccion || direccion.length > 250) faltan.push('una dirección válida');
     if (notas.length > 500) faltan.push('un comentario de hasta 500 caracteres');
     if (!canasto.length) faltan.push('productos en el canasto');
@@ -201,21 +203,14 @@
       errorEl.textContent = 'Falta completar ' + faltan.join(', ').replace(/, ([^,]*)$/, ' y $1') + '.';
       errorEl.hidden = false; return;
     }
-    const whatsapp = TIENDA.whatsapp.find(w => w.numero === b.dataset.numero);
-    if (!whatsapp) { errorEl.textContent = 'No se pudo identificar el contacto. Intenta nuevamente.'; errorEl.hidden = false; return; }
-    const seller = /yoya/i.test(whatsapp.etiqueta) ? 'yoya' : /vale/i.test(whatsapp.etiqueta) ? 'vale' : null;
-    if (!seller) { errorEl.textContent = 'No se pudo identificar el contacto. Intenta nuevamente.'; errorEl.hidden = false; return; }
     const items = canasto.map(l => ({id:l.id, name:porId[l.id].nombre, variant:l.variante || null, quantity:l.cant, unitPrice:precioDe(porId[l.id], l.variante)}));
-    const input = {name:nombre, phone:telefono, address:direccion, notes:notas, seller, items};
+    const input = {name:nombre, phone:telefono, address:direccion, notes:notas, seller:'yoya', items};
     const signature = JSON.stringify(input);
     if (!pendingOrder || pendingOrder.signature !== signature) pendingOrder = {signature, id:crypto.randomUUID()};
-    const detalle = canasto.map(l => {
-      const p = porId[l.id];
-      return `• ${l.cant} x ${p.nombre}${l.variante ? ' (' + l.variante + ')' : ''}: ${clp(precioDe(p, l.variante) * l.cant)}`;
-    }).join('\\n');
-    const msg = `Hola Las Viejas del Canasto, quiero hacer este pedido:\\n\\n${detalle}\\n\\nTotal: ${clp(totalPesos())}\\n\\nNombre: ${nombre}\\nTeléfono: ${telefono}\\nDirección: ${direccion}` + (notas ? `\\nComentarios: ${notas}` : '');
-    const popup = window.open('', '_blank');
-    b.disabled = true; errorEl.hidden = true;
+    const total = totalPesos();
+    b.disabled = true; b.textContent = 'Enviando pedido…'; errorEl.hidden = true;
+    const controles = panel.querySelectorAll('.qty button, .line-remove, .order-fields input, .order-fields textarea');
+    controles.forEach(control => { control.disabled = true; });
     try {
       const res = await fetch('https://lvc-esparragos.yoyatim.chatgpt.site/api/shop-orders', {
         method:'POST', headers:{'Content-Type':'application/json'},
@@ -223,14 +218,20 @@
       });
       if (!res.ok) throw new Error('No se pudo registrar el pedido.');
       const result = await res.json();
-      if (result.id !== pendingOrder.id || result.total !== totalPesos()) throw new Error('No se pudo confirmar el pedido.');
-      const url = `https://wa.me/${b.dataset.numero}?text=${encodeURIComponent(msg)}`;
-      if (popup) popup.location.replace(url); else window.location.assign(url);
+      if (result.id !== pendingOrder.id || result.total !== total) throw new Error('No se pudo confirmar el pedido.');
+      canasto = [];
+      guardar();
+      pendingOrder = null;
+      pintarCanasto();
+      document.getElementById('order-success').hidden = false;
+      ['order-name','order-phone','order-address','order-notes'].forEach(id => { document.getElementById(id).value = ''; });
     } catch {
-      if (popup) popup.close();
       errorEl.textContent = 'No pudimos registrar tu pedido. Revisa tu conexión e intenta nuevamente.';
       errorEl.hidden = false;
-    } finally { b.disabled = false; }
+    } finally {
+      controles.forEach(control => { control.disabled = false; });
+      b.disabled = false; b.textContent = 'Enviar pedido';
+    }
   });
 
   pintarCanasto();
