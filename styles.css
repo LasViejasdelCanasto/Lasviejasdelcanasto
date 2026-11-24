@@ -134,3 +134,5 @@
 .product[data-id^="navidad-"] .product-photo img{object-fit:contain}
 
 .product[data-id="navidad-pino"] .product-photo img{object-fit:cover;object-position:center bottom}
+
+@media (max-width: 620px) { .product[data-id="wenuy-trio-mermeladas"] .product-desc, .product[data-id="wenuy-trio-salsas"] .product-desc { display: block; } }
