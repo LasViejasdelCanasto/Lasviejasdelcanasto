@@ -41,7 +41,7 @@ const TIENDA = {
 
   productos: [
     { id: 'navidad-pesebre', marca: 'Las Viejas del Canasto', nombre: 'Pesebre', categoria: 'navidad', precio: 25000, imagen: 'images/productos/navidad-pesebre.jpg', descripcion: 'Pesebre decorativo. Medidas: 34 × 45 × 20 cm.' },
-    { id: 'navidad-pino', marca: 'Las Viejas del Canasto', nombre: 'Pino de mimbre', categoria: 'navidad', variantes: [ { nombre: '50 cm', precio: 25000 }, { nombre: '1,40 m', precio: 45000 }, { nombre: '1,90 m', precio: 65000 }, { nombre: '2,20 m con estrella', precio: 75000 } ], imagen: 'images/productos/navidad-pino.jpg', descripcion: 'Pino de mimbre disponible en cuatro medidas. Imagen referencial.' },
+    { id: 'navidad-pino', marca: 'Las Viejas del Canasto', nombre: 'Pino de mimbre', categoria: 'navidad', variantes: [ { nombre: '50 cm', precio: 25000 }, { nombre: '1,40 m', precio: 45000 }, { nombre: '1,90 m', precio: 65000 }, { nombre: '2,20 m', precio: 75000 } ], imagen: 'images/productos/navidad-pino.jpg', descripcion: 'Pino de mimbre disponible en cuatro medidas. Imagen referencial.' },
     { id: "juguete-baby-morocha", marca: "Baby Alive", nombre: "Baby Alive morocha", categoria: 'juguetes', precio: 19000, imagen: "images/productos/juguete-baby-morocha.jpg", descripcion: "Muñeca Baby Alive con accesorios." },
     { id: "juguete-baby-rubia", marca: "Baby Alive", nombre: "Baby Alive rubia", categoria: 'juguetes', precio: 19000, imagen: "images/productos/juguete-baby-rubia.jpg", descripcion: "Muñeca Baby Alive con accesorios." },
     { id: "juguete-baby-comida", marca: "Baby Alive", nombre: "Baby Alive comida", categoria: 'juguetes', precio: 6000, imagen: "images/productos/juguete-baby-comida.jpg", descripcion: "Comida para muñeca Baby Alive." },
