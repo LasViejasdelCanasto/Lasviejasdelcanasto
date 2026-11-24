@@ -38,6 +38,7 @@ const TIENDA = {
   ],
 
   productos: [
+    { id: 'parrilla-cepillo-recargable', marca: 'Las Viejas del Canasto', nombre: 'Cepillo Limpiador Recargable', categoria: 'parrilla', precio: 18000, imagen: 'images/productos/cepillo-limpiador-recargable.png', descripcion: 'Cepillo eléctrico recargable para limpiar la parrilla. Incluye cabezal de cerdas duras, cabezal de pulido y cable USB-C.' },
     { id: 'trad-pincel', marca: 'Trad', nombre: 'Pincel chino y/o Borla decorativa + soporte', categoria: 'hogar', variantes: [ { nombre: '40 cm', precio: 45000 }, { nombre: '50 cm', precio: 53000 } ], imagen: 'images/productos/trad-pincel.jpg', descripcion: 'Pincel chino y/o borla decorativa con soporte, disponible en dos medidas.' },
     { id: 'trad-servilleteros-yute', marca: 'Trad', nombre: 'Servilleteros de Yute', categoria: 'hogar', precio: 24000, imagen: 'images/productos/trad-servilleteros-yute.jpg', descripcion: 'Servilleteros de yute de la marca Trad.' },
     { id: 'trad-servilleteros-redondos', marca: 'Trad', nombre: 'Servilleteros Redondos', categoria: 'hogar', precio: 22000, imagen: 'images/productos/trad-servilleteros-redondos.jpg', descripcion: 'Servilleteros redondos de la marca Trad.' },
