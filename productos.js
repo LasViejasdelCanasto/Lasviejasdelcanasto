@@ -18,10 +18,7 @@ const TIENDA = {
 ],
 
   // Aviso destacado sobre la tienda. Para quitarlo: aviso: null
-  aviso: {
-    titulo: 'Día del Profesor',
-    texto: 'Pedidos hasta el viernes 9 de octubre. Entregas sin costo en Chicureo el martes 13 y miércoles 14 de octubre, ya envueltos para regalo.'
-  },
+  aviso: null,
 
   // Opciones de entrega que el cliente elige al enviar el pedido
   entregas: [
