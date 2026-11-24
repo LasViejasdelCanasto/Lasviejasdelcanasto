@@ -49,6 +49,7 @@
     return p.categoria === 'hogar' ? 'hogar' : 'gourmet';
   }
   function tipoDe(p) {
+    if (p.categoria === 'hogar' && /servilletero/i.test(p.nombre)) return 'Servilleteros';
     if (p.categoria === 'navidad') return 'Navidad';
     if (p.categoria === 'juguetes') return 'Juguetes';
     if (p.id === 'cce20117') return 'Bandejas';
