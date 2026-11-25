@@ -37,6 +37,7 @@ const TIENDA = {
   ],
 
   productos: [
+    { id: 'dispensador-endulzante', marca: 'Las Viejas del Canasto', nombre: 'Dispensador de endulzante', categoria: 'te-cafe', precio: 4000, imagen: 'images/productos/dispensador-endulzante.png', descripcion: 'Dispensador de endulzante de vidrio.' },
     { id: 'navidad-pesebre', marca: 'Las Viejas del Canasto', nombre: 'Pesebre', categoria: 'navidad', precio: 25000, imagen: 'images/productos/navidad-pesebre.jpg', descripcion: 'Pesebre decorativo. Medidas: 34 × 45 × 20 cm.' },
     { id: 'navidad-pino', marca: 'Las Viejas del Canasto', nombre: 'Pino de mimbre', categoria: 'navidad', variantes: [ { nombre: '50 cm', precio: 25000 }, { nombre: '1,40 m', precio: 45000 }, { nombre: '1,90 m', precio: 65000 }, { nombre: '2,20 m', precio: 75000 } ], imagen: 'images/productos/navidad-pino.jpg', descripcion: 'Pino de mimbre disponible en cuatro medidas. Imagen referencial.' },
     { id: "juguete-baby-morocha", marca: "Baby Alive", nombre: "Baby Alive morocha", categoria: 'juguetes', precio: 19000, imagen: "images/productos/juguete-baby-morocha.jpg", descripcion: "Muñeca Baby Alive con accesorios." },
@@ -52,8 +53,6 @@ const TIENDA = {
     { id: "juguete-sand", marca: "Play-Doh", nombre: "Play-Doh Sand", categoria: 'juguetes', precio: 21000, imagen: "images/productos/juguete-sand.jpg", descripcion: "Balde de arena moldeable con accesorios." },
     { id: "juguete-wheels", marca: "Play-Doh", nombre: "Play-Doh Wheels", categoria: 'juguetes', precio: 16000, imagen: "images/productos/juguete-wheels.jpg", descripcion: "Camión de bomberos Play-Doh Wheels con masa y accesorios." },
     { id: "juguete-patito", marca: "Playskool", nombre: "Playskool Patito", categoria: 'juguetes', precio: 11000, imagen: "images/productos/juguete-patito.jpg", descripcion: "Juguete de patitos para gatear, desde 6 meses." },
-    { id: "juguete-crunch-rosa", marca: "Play-Doh", nombre: "Play-Doh Crystal Crunch Gemas Brillantes rosa y amarillo", categoria: 'juguetes', precio: 11000, imagen: "images/productos/juguete-crunch-rosa.jpg", descripcion: "Dos recipientes con masa Crystal Crunch, rosa y amarillo." },
-    { id: "juguete-crunch-azul", marca: "Play-Doh", nombre: "Play-Doh Crystal Crunch Gemas Brillantes azul y blanco", categoria: 'juguetes', precio: 11000, imagen: "images/productos/juguete-crunch-azul.jpg", descripcion: "Dos recipientes con masa Crystal Crunch, azul y blanco." },
     { id: "juguete-cocomelon", marca: "Cocomelon", nombre: "Cocomelon Family Car", categoria: 'juguetes', precio: 15000, imagen: "images/productos/juguete-cocomelon.jpg", descripcion: "Auto familiar de juguete con figura Cocomelon." },
     { id: 'parrilla-cepillo-recargable', marca: 'Las Viejas del Canasto', nombre: 'Cepillo Limpiador Recargable', categoria: 'parrilla', precio: 18000, imagen: 'images/productos/cepillo-limpiador-recargable-v2.jpg', descripcion: 'Cepillo eléctrico recargable para limpiar la parrilla. Incluye cabezal de cerdas duras, cabezal de pulido y cable USB-C.' },
     { id: 'trad-pincel', marca: 'Trad', nombre: 'Pincel chino y/o Borla decorativa + soporte', categoria: 'hogar', variantes: [ { nombre: '40 cm', precio: 45000 }, { nombre: '50 cm', precio: 53000 } ], imagen: 'images/productos/trad-pincel.jpg', descripcion: 'Pincel chino y/o borla decorativa con soporte, disponible en dos medidas.' },
